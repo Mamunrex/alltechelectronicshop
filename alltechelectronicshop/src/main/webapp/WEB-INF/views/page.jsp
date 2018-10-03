@@ -33,6 +33,7 @@
     <link href="${css}/dataTables.bootstrap.css" rel="stylesheet">
     <link href="${css}/homepage.css" rel="stylesheet">
     <link href="${css}/font-awesome.css" rel="stylesheet">
+    <link href="${css}/custome.css" rel="stylesheet">
 
   </head>
   <body>

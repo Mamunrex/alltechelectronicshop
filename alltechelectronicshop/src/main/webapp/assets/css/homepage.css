@@ -57,5 +57,10 @@ body {
 }
 
 
+//custome css in product managment page
 
-
+.mContainer{
+	width:350px;
+	height: 350px;
+	background: red;
+}

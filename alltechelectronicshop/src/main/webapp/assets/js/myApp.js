@@ -10,6 +10,9 @@ $(function() {
 	case 'All Products':
 		$('#listProduct').addClass('active');
 		break;
+	case 'Manage Product':
+		$('#manageProduct').addClass('active');
+		break;
 	default:
 		// $('#listProduct').addClass('active');
 		$('a_' + menu).addClass('active');
@@ -72,7 +75,16 @@ $(function() {
 							{
 
 								data : 'quantity',
-								bSortable : false
+								bSortable : false,
+								mRender : function(data, type, row) {
+
+									if (data < 1) {
+										return '<span style="color:red">Out of Stock!</span>';
+									}
+
+									return data;
+
+								}
 
 							},
 							{
@@ -86,11 +98,18 @@ $(function() {
 											+ '/show/'
 											+ data
 											+ '/product" class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></a>&#160;&#160;';
-									str += '<a href="'
+									
+
+									if (row.quantity < 1) {
+										str += '<a href="javascript:void(0)" class="btn btn-success disabled"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>';
+									} else {
+
+										str += '<a href="'
 											+ window.contextRoot
 											+ '/cart/add/'
 											+ data
 											+ '/product" class="btn btn-success"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>';
+									}
 
 									return str;
 

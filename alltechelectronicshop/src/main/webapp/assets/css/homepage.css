@@ -51,7 +51,10 @@ body {
 .mycss{
 	height: 100%;
 }
-
+.container-new{
+	margin: 0 auto;
+	text-align: center;
+}
 
 
 

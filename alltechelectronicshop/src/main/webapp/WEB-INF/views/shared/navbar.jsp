@@ -21,6 +21,9 @@
             <li class="nav-item" id="listProduct">
               <a class="nav-link manu-border" href="${contextRoot}/show/all/products">View Product</a>
             </li>
+            <li class="nav-item" id="listProduct">
+              <a class="nav-link manu-border" href="${contextRoot}/manage/products">Manage Product</a>
+            </li>
           </ul>
         </div>
       </div>

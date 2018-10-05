@@ -1,0 +1,23 @@
+.mConfirm{
+	margin: 8% auto;
+	width: 80%;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+.mConfirm2{
+	height: 40px;
+    width: 100%;
+    background: red;
+}
+.mBorderP{
+	border: 1px solid #DDD;
+	border-radius: 5px;
+}
+.mMArfin{
+	margin-left: 30px;
+}
+.mMArfin{
+	float: right;
+	margin: 10px;
+}

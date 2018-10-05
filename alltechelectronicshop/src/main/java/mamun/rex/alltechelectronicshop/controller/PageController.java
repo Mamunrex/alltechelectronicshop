@@ -132,5 +132,14 @@ public class PageController {
 		mv.addObject("title", "403 Access Denied");		
 		return mv;
 	}
+	
+	
+	/* Having similar mapping to our flow id */
+	@RequestMapping(value = "/register")
+	public ModelAndView register() {
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "About Us");
+		return mv;
+	}
 
 }

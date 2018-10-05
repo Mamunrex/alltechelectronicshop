@@ -19,12 +19,12 @@ public class JsonDataController {
 	@Autowired
 	private ProductDAO productDAO;
 	
-//	@RequestMapping("/admin/all/products")
-//	@ResponseBody
-//	public List<Product> getAllProductsList() {		
-//		return productDAO.list();
-//				
-//	}	
+	@RequestMapping("/admin/all/products")
+	@ResponseBody
+	public List<Product> getAllProductsList() {		
+		return productDAO.list();
+				
+	}	
 	
 	
 	@RequestMapping("/all/products")

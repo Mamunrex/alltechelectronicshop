@@ -1,12 +1,19 @@
 package mamun.rex.alltechelectronicshop.controller;
 
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import mamun.rex.alltechelectronicshop.exception.ProductNotFoundException;
@@ -56,6 +63,22 @@ public class PageController {
 		ModelAndView mv = new ModelAndView("page");		
 		mv.addObject("title","Contact Us");
 		mv.addObject("userClickContact",true);
+		return mv;				
+	}
+	
+	/* Login Method */
+	@RequestMapping(value = "/login")
+	public ModelAndView login(@RequestParam(name="error", required = false)String error, @RequestParam(name="logout", required = false) String logout) {		
+		ModelAndView mv = new ModelAndView("login");	
+		
+		if(error!=null) {
+			mv.addObject("message", "Username and Password is invalid!");
+		}
+		if(logout!=null) { 
+			mv.addObject("logout", "You have logged out successfully!");
+		}
+		
+		mv.addObject("title","Login");
 		return mv;				
 	}
 	
@@ -141,5 +164,20 @@ public class PageController {
 		mv.addObject("title", "About Us");
 		return mv;
 	}
+	
+	/* Logout Method */
+	@RequestMapping(value = "/perform-logout")
+	public String logout(HttpServletRequest request, HttpServletResponse response) {	
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+	    if (auth != null){    
+	        new SecurityContextLogoutHandler().logout(request, response, auth);
+	    }
+		
+		return "redirect:/login?logout";
+	}
+	
+	
+	
+	
 
 }

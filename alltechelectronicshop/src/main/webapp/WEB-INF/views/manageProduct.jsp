@@ -78,14 +78,16 @@
 			<div class="mCustomeDesign">
 				<sf:select class="form-control" id="categoryId" path="categoryId"
 					items="${categories}" itemLabel="name" itemValue="id" />
-					
-					<c:if test="${product.id == 0}">
+
+				<c:if test="${product.id == 0}">
 					<div class="text-right">
-					   <br/>
-					  <!-- Button to Open the Modal -->
-						<button type="button" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#myCategoryModal">Add Category</button>
+						<br />
+						<!-- Button to Open the Modal -->
+						<button type="button" class="btn btn-warning btn-xs"
+							data-toggle="modal" data-target="#myCategoryModal">Add
+							Category</button>
 					</div>
-					</c:if>
+				</c:if>
 			</div>
 
 
@@ -113,34 +115,40 @@
 
 
 <!-- The Modal -->
-<div class="modal" id="myCategoryModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add Category</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-         <sf:form class="form-horizontal" modelAttribute="category" action="${contextRoot}/manage/category" method="POST">
-          <div class="form-group">
-            <label for="recipient-name" class="col-form-label">Name</label>
-            <sf:input type="text" class="form-control" path="name" id="category_name" placeholder="Category Name"/>
-          </div>
-          <div class="form-group">
-            <label for="message-text" class="col-form-label">Description</label>
-            <sf:textarea cols="" rows="5" class="form-control" path="description" id="category_description" placeholder="Enter category description here!"/>
-          </div>
-          
-           <div class="modal-footer">
-              <input type="submit" class="btn btn-primary" value="Add Category">
-           </div>
-           
-          </sf:form>
-      </div>    
-    </div>
-  </div>
+<div class="modal" id="myCategoryModal" tabindex="-1" role="dialog"
+	aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Add Category</h5>
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<sf:form class="form-horizontal" modelAttribute="category"
+					action="${contextRoot}/manage/category" method="POST">
+					<div class="form-group">
+						<label for="recipient-name" class="col-form-label">Name</label>
+						<sf:input type="text" class="form-control" path="name"
+							id="category_name" placeholder="Category Name" />
+					</div>
+					<div class="form-group">
+						<label for="message-text" class="col-form-label">Description</label>
+						<sf:textarea cols="" rows="5" class="form-control"
+							path="description" id="category_description"
+							placeholder="Enter category description here!" />
+					</div>
+
+					<div class="modal-footer">
+						<input type="submit" class="btn btn-primary" value="Add Category">
+					</div>
+
+				</sf:form>
+			</div>
+		</div>
+	</div>
 </div>
 
 
@@ -161,47 +169,49 @@
 		<h3>Available Products</h3>
 		<hr />
 	</div>
-	
+
 	<div class="container">
 		<div class='col-xs-12'>
-			<div style="overflow: auto">
 
-				<table id="adminProductTable"
-					class="table table-striped table-bordered">
-					<thead>
-						<tr>
-							<th>Id</th>
-							<th>&#160;</th>
-							<th>Name</th>
-							<th>Brand</th>
-							<th>Quantity</th>
-							<th>Unit Price</th>
-							<th>Activate</th>
-							<th>Edit</th>
-						</tr>
-					</thead>
+			<div class="container-fluid">
+				<div class="table-responsive">
+					<table id="adminProductTable"
+						class="table table-striped table-bordered">
+						<thead>
+							<tr>
+								<th>Id</th>
+								<th>&#160;</th>
+								<th>Name</th>
+								<th>Brand</th>
+								<th>Quantity</th>
+								<th>Unit Price</th>
+								<th>Activate</th>
+								<th>Edit</th>
+							</tr>
+						</thead>
 
-					<tfoot>
-						<tr>
-							<th>Id</th>
-							<th>&#160;</th>
-							<th>Name</th>
-							<th>Brand</th>
-							<th>Quantity</th>
-							<th>Unit Price</th>
-							<th>Activate</th>
-							<th>Edit</th>
-						</tr>
-					</tfoot>
-				</table>
-
+						<tfoot>
+							<tr>
+								<th>Id</th>
+								<th>&#160;</th>
+								<th>Name</th>
+								<th>Brand</th>
+								<th>Quantity</th>
+								<th>Unit Price</th>
+								<th>Activate</th>
+								<th>Edit</th>
+							</tr>
+						</tfoot>
+					</table>
+				</div>
 			</div>
+
 		</div>
 	</div>
 
 
 	<!-- Start Modal -->
-	
+
 	<!-- End Model -->
 
 </div>

@@ -100,15 +100,14 @@
 
 			<security:authorize access="hasAuthority('ADMIN')">
 				<a href="${contextRoot}/manage/${product.id}/product"
-					class="btn btn-success"> <span
-					class="glyphicon glyphicon-pencil"></span> Edit
+					class="btn btn-success"> <i class="fa fa-pencil" aria-hidden="true"></i> Edit
 				</a>
 			</security:authorize>
 
 
 
 			<a href="${contextRoot}/show/all/products" class="btn btn-warning">
-				Continue Shopping</a>
+				Back</a>
 
 		</div>
 

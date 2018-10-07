@@ -48,20 +48,6 @@ public class UserDAOImpl implements UserDAO {
 			return false;
 		}
 	}
-
-	// ==============CART================
-	@Override
-	public boolean updateCart(Cart cart) {
-		try {
-
-			sessionFactory.getCurrentSession().update(cart);
-			return true;
-
-		} catch (Exception e) {
-			e.printStackTrace();
-			return false;
-		}
-	}
 	
 	// ==============Email================
 
@@ -74,7 +60,7 @@ public class UserDAOImpl implements UserDAO {
 					.getSingleResult();
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			//e.printStackTrace();
 			return null;
 		}
 	}
@@ -110,5 +96,6 @@ public class UserDAOImpl implements UserDAO {
 			return null;
 		}
 	}
+
 
 }

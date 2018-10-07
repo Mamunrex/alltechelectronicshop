@@ -49,7 +49,7 @@
 					</div>
 				</div>
 				<div class="col">
-					<sf:input type="text" path="confirmPassword" class="form-control" placeholder="Re-enter Password" />
+					<sf:input type="password" path="confirmPassword" class="form-control" placeholder="Re-enter Password" />
 					<div class="colorRed">
 						<sf:errors path="confirmPassword" cssClass="help-block" element="em" />
 					</div>					
